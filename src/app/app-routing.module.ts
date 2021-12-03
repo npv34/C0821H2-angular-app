@@ -6,6 +6,7 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {UserListComponent} from "./components/users/user-list/user-list.component";
 import {UserAddComponent} from "./components/users/user-add/user-add.component";
 import {AuthGuardGuard} from "./auth-guard.guard";
+import {UsersModule} from "./components/users/users.module";
 
 const routes: Routes = [
   {
@@ -22,11 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        component: UserListComponent
-      },
-      {
-        path: 'users/add',
-        component: UserAddComponent
+        loadChildren: () => import('./components/users/users.module').then(m => m.UsersModule)
       },
     ],
     canActivate: [AuthGuardGuard]

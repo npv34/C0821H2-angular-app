@@ -10,8 +10,8 @@ import { MasterComponent } from './components/master/master.component';
 import { SidebarComponent } from './components/core/sidebar/sidebar.component';
 import { TopbarComponent } from './components/core/topbar/topbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { UserListComponent } from './components/users/user-list/user-list.component';
-import { UserAddComponent } from './components/users/user-add/user-add.component';
+import {UsersModule} from "./components/users/users.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,13 +22,12 @@ import { UserAddComponent } from './components/users/user-add/user-add.component
     SidebarComponent,
     TopbarComponent,
     DashboardComponent,
-    UserListComponent,
-    UserAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
